@@ -1,17 +1,25 @@
 import React, { useState, useEffect } from 'react'
+import { Route } from 'react-router-dom'
 import { parse } from 'query-string'
+import slug from 'slug'
 
 import { getPlayers } from '../../api'
+
 import Sidebar from '../Sidebar'
+import Player from '../Player'
 
 const Players = ({ location, match }) => {
-  const [players, setPlayers] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [state, setState] = useState({
+    players: [],
+    loading: true
+  })
 
   const fetchPlayers = teamId => {
     getPlayers(teamId).then(players => {
-      setLoading(false)
-      setPlayers(players)
+      setState({
+        players,
+        loading: false
+      })
     })
   }
 
@@ -24,6 +32,8 @@ const Players = ({ location, match }) => {
     }
   }, [])
 
+  const { loading, players } = state
+
   return (
     <div className='container two-column'>
       <Sidebar
@@ -31,11 +41,26 @@ const Players = ({ location, match }) => {
         loading={loading}
         list={players.map(player => player.name)}
       />
+
       {
         !loading && location.pathname === '/players'
           ? <div className='sidebar-instruction'>Select a player</div>
           : null
       }
+
+      <Route
+        path={`${match.url}/:playerId`} render={({ match }) => {
+          if (loading) {
+            return null
+          }
+
+          const player = players.find(player => {
+            return slug(player.name) === match.params.playerId
+          })
+
+          return <Player player={player} />
+        }}
+      />
     </div>
   )
 }
