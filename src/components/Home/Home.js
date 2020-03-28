@@ -10,7 +10,6 @@ const Home = () => {
 
   React.useEffect(() => {
     getTeamNames().then(teamNames => {
-      console.log('teamNames:', teamNames)
       setTeamNames(teamNames)
     })
   }, [])

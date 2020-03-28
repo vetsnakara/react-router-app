@@ -5,7 +5,7 @@ const Player = ({
   player: { name, avatar, number, teamId }
 }) => {
   return (
-    <div className='panel'>
+    <>
       <img className='avatar' src={avatar} alt={`${name}'s avatar`} />
       <h1 className='medium-header'>{name}</h1>
       <div className='row'>
@@ -26,7 +26,7 @@ const Player = ({
           </li>
         </ul>
       </div>
-    </div>
+    </>
   )
 }
 

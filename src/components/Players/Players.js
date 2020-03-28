@@ -58,7 +58,11 @@ const Players = ({ location, match }) => {
             return slug(player.name) === match.params.playerId
           })
 
-          return <Player player={player} />
+          return (
+            <div className='panel'>
+              <Player player={player} />
+            </div>
+          )
         }}
       />
     </div>
