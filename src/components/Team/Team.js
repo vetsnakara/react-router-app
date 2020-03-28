@@ -12,7 +12,7 @@ const Team = ({ id, children }) => {
   }, [id])
 
   if (!team) {
-    return <Loading />
+    return <Loading text='Loading Team' />
   }
 
   return (

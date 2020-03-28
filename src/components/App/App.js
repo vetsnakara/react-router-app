@@ -5,6 +5,7 @@ import Navbar from '../Navbar'
 import Home from '../Home'
 import Players from '../Players'
 import Teams from '../Teams'
+import TeamPage from '../TeamPage'
 import NotFound from '../NotFound'
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
           <Route path='/' exact component={Home} />
           <Route path='/players' component={Players} />
           <Route path='/teams' component={Teams} />
+          <Route path='/:teamId' component={TeamPage} />
           <Route component={NotFound} />
         </Switch>
       </div>
