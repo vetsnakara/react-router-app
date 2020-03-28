@@ -3,7 +3,7 @@ import {
   players,
   generateArticle,
   generateTeamsArticles
-} from './dummy-data'
+} from './data'
 
 let cachedPlayers = null
 const cachedTeams = {}

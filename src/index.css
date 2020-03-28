@@ -182,6 +182,14 @@ a {
   margin: 0 10px;
 }
 
+.team-logo {
+  transition: transform .3s ease-in-out;
+}
+
+.team-logo:hover {
+  transform: scale(1.2);
+}
+
 @media (max-width: 680px) {
   .container {
     padding: 8px;
