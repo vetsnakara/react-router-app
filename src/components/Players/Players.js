@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Route } from 'react-router-dom'
 import { parse } from 'query-string'
 import slug from 'slug'
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 import { getPlayers } from '../../api'
 
@@ -59,9 +60,17 @@ const Players = ({ location, match }) => {
           })
 
           return (
-            <div className='panel'>
-              <Player player={player} />
-            </div>
+            <TransitionGroup className='panel'>
+              <CSSTransition
+                key={location.key}
+                timeout={300}
+                classNames='fade'
+              >
+                <div className='panel'>
+                  <Player player={player} />
+                </div>
+              </CSSTransition>
+            </TransitionGroup>
           )
         }}
       />
