@@ -1,13 +1,30 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
+import DynamicImport from '../DynamicImport'
 import Navbar from '../Navbar'
-import Home from '../Home'
-import Players from '../Players'
-import Teams from '../Teams'
 import TeamPage from '../TeamPage'
 import Articles from '../Articles'
 import NotFound from '../NotFound'
+import Loading from '../Loading'
+
+const Home = props => (
+  <DynamicImport load={() => import('../Home')}>
+    {Component => !Component ? <Loading /> : <Component {...props} />}
+  </DynamicImport>
+)
+
+const Teams = props => (
+  <DynamicImport load={() => import('../Teams')}>
+    {Component => !Component ? <Loading /> : <Component {...props} />}
+  </DynamicImport>
+)
+
+const Players = props => (
+  <DynamicImport load={() => import('../Players')}>
+    {Component => !Component ? <Loading /> : <Component {...props} />}
+  </DynamicImport>
+)
 
 const App = () => {
   return (
