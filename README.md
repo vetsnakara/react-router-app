@@ -13,15 +13,17 @@
 > Training project with extensive usage of [React Router](https://reacttraining.com/react-router/web/guides/quick-start): URL parameters, custom links, nested routes, redirects, route based code splitting, animated transitions, etc.
 
 ### 📺 Preview
-  <table style="width: 100%; background-color: white"">
-  <tr>
-    <td colspan="2" style="text-align: center"><img width="600" src="https://raw.githubusercontent.com/vetsnakara/react-router-app/master/preview/main.png"/></td>
-  </tr>
-  </table>
+<p align="center">
+  <img width="600" src="https://raw.githubusercontent.com/vetsnakara/react-router-app/master/preview/main.png"/>
+</p>
 
 <details>
 <summary>other views 👀</summary>
-  <table style="width: 100%; background-color: white"" border="2">
+  <table style="width: 100%; background-color: white"" border="1">
+  <tr>
+    <th>Team Page</th>
+    <th>Player Page</th>
+  </tr>                                                                 
   <tr>
     <td><img src="https://raw.githubusercontent.com/vetsnakara/react-router-app/master/preview/team.png"/></td>
     <td><img src="https://raw.githubusercontent.com/vetsnakara/react-router-app/master/preview/player.png"/></td>
