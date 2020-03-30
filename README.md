@@ -44,7 +44,7 @@
   * `/:teamName/articles` - team's article list
   * `/:teamName/articles/:articleTitle` - article
 * Loading indicators
-* Route bases code spitting
+* Route based code spitting
 * CSS animations (home page)
 * Animated transitions (between players pages)
 
