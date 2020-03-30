@@ -19,11 +19,11 @@
 
 <details>
 <summary>other views 👀</summary>
-  <table style="width: 100%; background-color: white"" border="1">
+  <table style="width: 100%; background-color: white"" border="2">
   <tr>
     <th>Team Page</th>
     <th>Player Page</th>
-  </tr>                                                                 
+  </tr>
   <tr>
     <td><img src="https://raw.githubusercontent.com/vetsnakara/react-router-app/master/preview/team.png"/></td>
     <td><img src="https://raw.githubusercontent.com/vetsnakara/react-router-app/master/preview/player.png"/></td>
@@ -32,33 +32,31 @@
 </details>
 
 ### ✨ Features
-* Using fake promise bases API
+* Using fake promise based API
 * Routes:
   * `/` - home page
-  * `/players` - players page
-  * `/players?teamId=[teamId]` - players page
-  * `/players/:playerName` - player page
-  * `/teams` - teams page
-  * `/teams/:teamName` - team preview page
-  * `/:teamName` - team main page
+  * `/players` - players list
+  * `/players?teamId=[teamId]` - players list (filtered by team)
+  * `/players/:playerName` - player's info
+  * `/teams` - teams list
+  * `/teams/:teamName` - team's preview
+  * `/:teamName` - team's main page
   * `/:teamName/articles` - team's article list
   * `/:teamName/articles/:articleTitle` - article
 * Loading indicators
-* Theme button
-* Custom Tooltips (based on render props pattern)
+* Route bases code spitting
+* CSS animations (home page)
+* Animated transitions (between players pages)
 
 ### 🛠️ Technologies
 * __React__ for UI rendering
 * __React Hooks__ for local state and side effects
-  * class-based components are used too 🤫
-* __React Context__ for toggling light/dark theme
 * __React Router__ for routing
-* __React JSS__ for styles and theming
 
 ### 🚀 Setup
 ``` sh
-$ git clone https://github.com/vetsnakara/github-battle.git
-$ cd github-battle
+$ git clone https://github.com/vetsnakara/react-router-app.git
+$ cd react-router-app
 $ npm install
 $ npm start
 ```
